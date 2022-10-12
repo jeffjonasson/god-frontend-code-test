@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useTheme, View } from 'vcc-ui';
 import useEmblaCarousel from 'embla-carousel-react';
 import ChevronButton from './chevron-button';
@@ -32,12 +32,20 @@ const Carousel: React.FC<Props> = ({ children }) => {
     setSelectedIndex(carousel.selectedScrollSnap());
   }, [carousel, setSelectedIndex]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!carousel) return;
     onSelect();
     setScrollSnaps(carousel.scrollSnapList());
     carousel.on('select', onSelect);
   }, [carousel, setScrollSnaps, onSelect]);
+
+  useEffect(() => {
+    if (!carousel) return;
+    carousel.reInit();
+    setSelectedIndex(0);
+    setScrollSnaps(carousel.scrollSnapList());
+    carousel.scrollTo(0);
+  }, [children, carousel]);
 
   return (
     <View>

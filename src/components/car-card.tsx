@@ -45,7 +45,12 @@ const CarouselCarCard: React.FC<Car> = ({
         </Text>
       </View>
       <div style={{ position: 'relative', width: '100%', height: '250px' }}>
-        <Image src={imageUrl} alt='Car' layout='fill' objectFit='contain' />
+        <Image
+          src={imageUrl}
+          alt={`Car ${id}`}
+          layout='fill'
+          objectFit='contain'
+        />
       </div>
       <Spacer />
       <View direction='row' justifyContent='center' alignItems='center'>
