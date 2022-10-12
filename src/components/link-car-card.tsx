@@ -24,7 +24,12 @@ const CarCardLink: React.FC<LinkProps> = ({ label, linkTo }) => {
             {label}
           </Text>
           <Spacer size={1} />
-          <Image src={chevron} height={10} width={10} />
+          <Image
+            alt='Small right pointing chevron'
+            src={chevron}
+            height={10}
+            width={10}
+          />
         </View>
       </a>
     </Link>
