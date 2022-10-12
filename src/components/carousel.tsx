@@ -55,7 +55,7 @@ const Carousel: React.FC<Props> = ({ children }) => {
             {scrollSnaps.map((_, index) => (
               <div
                 className='carousel__dots'
-                key={Math.random()}
+                key={`dot-${index}`}
                 style={{
                   backgroundColor:
                     selectedIndex === index
