@@ -20,7 +20,7 @@ const FilterSelector: React.FC<Props> = ({
   >
     <option value=''>All</option>
     {list.map((element) => (
-      <option value={element}>
+      <option key={element} value={element}>
         {element.charAt(0).toUpperCase() + element.slice(1)}
       </option>
     ))}

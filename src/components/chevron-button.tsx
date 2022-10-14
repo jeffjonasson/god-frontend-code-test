@@ -13,15 +13,15 @@ const ChevronButton: React.FC<Props> = ({
   label,
   isBackArrow = false,
 }) => (
-  <Image
-    aria-label={label}
-    alt={`${isBackArrow ? 'Left pointing' : 'Right pointing'} chevron`}
-    style={{ transform: isBackArrow ? 'rotate(180deg)' : 'rotate(0deg)' }}
-    src={chevronCircle}
-    height={50}
-    width={50}
-    onClick={onClick}
-  />
+  <button type='button' aria-label={label} onClick={onClick}>
+    <Image
+      alt={`${isBackArrow ? 'Left pointing' : 'Right pointing'} chevron`}
+      style={{ transform: isBackArrow ? 'rotate(180deg)' : 'rotate(0deg)' }}
+      src={chevronCircle}
+      height={50}
+      width={50}
+    />
+  </button>
 );
 
 export default ChevronButton;
